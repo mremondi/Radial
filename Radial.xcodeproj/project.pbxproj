@@ -8,13 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		4294B5BC20C070A20021B94E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5BB20C070A20021B94E /* AppDelegate.swift */; };
-		4294B5BE20C070A20021B94E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5BD20C070A20021B94E /* ViewController.swift */; };
 		4294B5C120C070A20021B94E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4294B5BF20C070A20021B94E /* Main.storyboard */; };
-		4294B5C420C070A20021B94E /* Radial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5C220C070A20021B94E /* Radial.xcdatamodeld */; };
 		4294B5C620C070A20021B94E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4294B5C520C070A20021B94E /* Assets.xcassets */; };
 		4294B5C920C070A20021B94E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4294B5C720C070A20021B94E /* LaunchScreen.storyboard */; };
 		4294B5D420C070A30021B94E /* RadialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5D320C070A30021B94E /* RadialTests.swift */; };
 		4294B5DF20C070A30021B94E /* RadialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5DE20C070A30021B94E /* RadialUITests.swift */; };
+		4294B5F320C0716E0021B94E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5F220C0716E0021B94E /* Navigator.swift */; };
+		4294B5F520C071790021B94E /* AppNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5F420C071790021B94E /* AppNavigator.swift */; };
+		4294B5F720C071970021B94E /* MainNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5F620C071970021B94E /* MainNavigator.swift */; };
+		4294B5F920C071B90021B94E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5F820C071B90021B94E /* ViewControllerFactory.swift */; };
+		4294B5FB20C071C50021B94E /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5FA20C071C50021B94E /* DependencyContainer.swift */; };
+		4294B5FD20C071D90021B94E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5FC20C071D90021B94E /* HomeViewController.swift */; };
+		4294B5FF20C072110021B94E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B5FE20C072110021B94E /* HomeView.swift */; };
+		4294B60120C072960021B94E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60020C072960021B94E /* HomeInteractor.swift */; };
+		4294B60420C072B50021B94E /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60320C072B50021B94E /* UIViewExtensions.swift */; };
+		4294B60620C072CB0021B94E /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60520C072CB0021B94E /* StyleKit.swift */; };
+		4294B60820C073960021B94E /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60720C073960021B94E /* ClockView.swift */; };
+		4294B60E20C07B8C0021B94E /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60D20C07B8C0021B94E /* AddEventViewController.swift */; };
+		4294B61020C07B930021B94E /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B60F20C07B930021B94E /* AddEventView.swift */; };
+		4294B61220C07B9B0021B94E /* AddEventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B61120C07B9B0021B94E /* AddEventInteractor.swift */; };
+		4294B61420C07FA00021B94E /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B61320C07FA00021B94E /* UITextFieldExtensions.swift */; };
+		4294B61620C087BC0021B94E /* EventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B61520C087BC0021B94E /* EventRepository.swift */; };
+		4294B61820C089BE0021B94E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4294B61720C089BE0021B94E /* Event.swift */; };
+		4294B61B20C08C2F0021B94E /* EventCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4294B61920C08C2F0021B94E /* EventCoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +53,7 @@
 /* Begin PBXFileReference section */
 		4294B5B820C070A20021B94E /* Radial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4294B5BB20C070A20021B94E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4294B5BD20C070A20021B94E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4294B5C020C070A20021B94E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4294B5C320C070A20021B94E /* Radial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Radial.xcdatamodel; sourceTree = "<group>"; };
 		4294B5C520C070A20021B94E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4294B5C820C070A20021B94E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4294B5CA20C070A20021B94E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,24 @@
 		4294B5DA20C070A30021B94E /* RadialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RadialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4294B5DE20C070A30021B94E /* RadialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialUITests.swift; sourceTree = "<group>"; };
 		4294B5E020C070A30021B94E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4294B5F220C0716E0021B94E /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		4294B5F420C071790021B94E /* AppNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigator.swift; sourceTree = "<group>"; };
+		4294B5F620C071970021B94E /* MainNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigator.swift; sourceTree = "<group>"; };
+		4294B5F820C071B90021B94E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		4294B5FA20C071C50021B94E /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		4294B5FC20C071D90021B94E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4294B5FE20C072110021B94E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4294B60020C072960021B94E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		4294B60320C072B50021B94E /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		4294B60520C072CB0021B94E /* StyleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		4294B60720C073960021B94E /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		4294B60D20C07B8C0021B94E /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		4294B60F20C07B930021B94E /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		4294B61120C07B9B0021B94E /* AddEventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventInteractor.swift; sourceTree = "<group>"; };
+		4294B61320C07FA00021B94E /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		4294B61520C087BC0021B94E /* EventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRepository.swift; sourceTree = "<group>"; };
+		4294B61720C089BE0021B94E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4294B61A20C08C2F0021B94E /* EventCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventCoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +131,18 @@
 		4294B5BA20C070A20021B94E /* Radial */ = {
 			isa = PBXGroup;
 			children = (
+				4294B60220C072AA0021B94E /* Utils */,
+				4294B5F120C071500021B94E /* Storage */,
+				4294B5F020C071490021B94E /* Models */,
+				4294B5EF20C0713F0021B94E /* Navigation */,
+				4294B5EE20C071380021B94E /* Factories */,
+				4294B5EC20C071230021B94E /* UI */,
 				4294B5BB20C070A20021B94E /* AppDelegate.swift */,
-				4294B5BD20C070A20021B94E /* ViewController.swift */,
 				4294B5BF20C070A20021B94E /* Main.storyboard */,
 				4294B5C520C070A20021B94E /* Assets.xcassets */,
 				4294B5C720C070A20021B94E /* LaunchScreen.storyboard */,
 				4294B5CA20C070A20021B94E /* Info.plist */,
-				4294B5C220C070A20021B94E /* Radial.xcdatamodeld */,
+				4294B61920C08C2F0021B94E /* EventCoreData.xcdatamodeld */,
 			);
 			path = Radial;
 			sourceTree = "<group>";
@@ -126,6 +163,81 @@
 				4294B5E020C070A30021B94E /* Info.plist */,
 			);
 			path = RadialUITests;
+			sourceTree = "<group>";
+		};
+		4294B5EC20C071230021B94E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4294B60C20C07B7E0021B94E /* AddEvent */,
+				4294B5ED20C071280021B94E /* Home */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4294B5ED20C071280021B94E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4294B5FC20C071D90021B94E /* HomeViewController.swift */,
+				4294B5FE20C072110021B94E /* HomeView.swift */,
+				4294B60020C072960021B94E /* HomeInteractor.swift */,
+				4294B60720C073960021B94E /* ClockView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4294B5EE20C071380021B94E /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				4294B5F820C071B90021B94E /* ViewControllerFactory.swift */,
+				4294B5FA20C071C50021B94E /* DependencyContainer.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		4294B5EF20C0713F0021B94E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4294B5F220C0716E0021B94E /* Navigator.swift */,
+				4294B5F420C071790021B94E /* AppNavigator.swift */,
+				4294B5F620C071970021B94E /* MainNavigator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		4294B5F020C071490021B94E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4294B61720C089BE0021B94E /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4294B5F120C071500021B94E /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				4294B61520C087BC0021B94E /* EventRepository.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		4294B60220C072AA0021B94E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4294B60320C072B50021B94E /* UIViewExtensions.swift */,
+				4294B60520C072CB0021B94E /* StyleKit.swift */,
+				4294B61320C07FA00021B94E /* UITextFieldExtensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4294B60C20C07B7E0021B94E /* AddEvent */ = {
+			isa = PBXGroup;
+			children = (
+				4294B60D20C07B8C0021B94E /* AddEventViewController.swift */,
+				4294B60F20C07B930021B94E /* AddEventView.swift */,
+				4294B61120C07B9B0021B94E /* AddEventInteractor.swift */,
+			);
+			path = AddEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +371,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4294B5C420C070A20021B94E /* Radial.xcdatamodeld in Sources */,
-				4294B5BE20C070A20021B94E /* ViewController.swift in Sources */,
+				4294B60620C072CB0021B94E /* StyleKit.swift in Sources */,
+				4294B60E20C07B8C0021B94E /* AddEventViewController.swift in Sources */,
+				4294B60120C072960021B94E /* HomeInteractor.swift in Sources */,
+				4294B61620C087BC0021B94E /* EventRepository.swift in Sources */,
+				4294B5F920C071B90021B94E /* ViewControllerFactory.swift in Sources */,
+				4294B61420C07FA00021B94E /* UITextFieldExtensions.swift in Sources */,
+				4294B61820C089BE0021B94E /* Event.swift in Sources */,
+				4294B5F720C071970021B94E /* MainNavigator.swift in Sources */,
+				4294B5FF20C072110021B94E /* HomeView.swift in Sources */,
+				4294B5F320C0716E0021B94E /* Navigator.swift in Sources */,
+				4294B5FD20C071D90021B94E /* HomeViewController.swift in Sources */,
+				4294B61020C07B930021B94E /* AddEventView.swift in Sources */,
+				4294B5F520C071790021B94E /* AppNavigator.swift in Sources */,
+				4294B5FB20C071C50021B94E /* DependencyContainer.swift in Sources */,
+				4294B61220C07B9B0021B94E /* AddEventInteractor.swift in Sources */,
+				4294B61B20C08C2F0021B94E /* EventCoreData.xcdatamodeld in Sources */,
+				4294B60820C073960021B94E /* ClockView.swift in Sources */,
+				4294B60420C072B50021B94E /* UIViewExtensions.swift in Sources */,
 				4294B5BC20C070A20021B94E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,13 +718,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4294B5C220C070A20021B94E /* Radial.xcdatamodeld */ = {
+		4294B61920C08C2F0021B94E /* EventCoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4294B5C320C070A20021B94E /* Radial.xcdatamodel */,
+				4294B61A20C08C2F0021B94E /* EventCoreData.xcdatamodel */,
 			);
-			currentVersion = 4294B5C320C070A20021B94E /* Radial.xcdatamodel */;
-			path = Radial.xcdatamodeld;
+			currentVersion = 4294B61A20C08C2F0021B94E /* EventCoreData.xcdatamodel */;
+			path = EventCoreData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
