@@ -16,13 +16,10 @@ class EventRepository{
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 return
         }
-        print("here")
         let managedContext = appDelegate.persistentContainer.viewContext
-        print("here2")
         let entity = NSEntityDescription.entity(forEntityName: "Event", in: managedContext)!
-        print("here3")
         let eventCache = NSManagedObject(entity: entity, insertInto: managedContext)
-        print("here4")
+
         eventCache.setValue(eventData[0], forKeyPath: "title")
         eventCache.setValue(eventData[1], forKeyPath: "notes")
         eventCache.setValue(eventData[2], forKeyPath: "startTime")
@@ -33,6 +30,38 @@ class EventRepository{
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+    }
+    
+    func getEvents(for date: Date) -> [EventModel] {
+        let allEvents = getAllEvents()
+        print("all events count")
+        print(allEvents.count)
+        var selectedDateEvents: [EventModel] = []
+        
+        let selectedDate = date
+        let selectedDateCalendar = Calendar.current
+        let selectedDateComponents = selectedDateCalendar.dateComponents([.year, .month, .day], from: selectedDate)
+        
+        let selectedDateYear =  selectedDateComponents.year
+        let selectedDateMonth = selectedDateComponents.month
+        let selectedDateDay = selectedDateComponents.day
+        
+        for event in allEvents{
+            let date = event.startTime
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day], from: date)
+            
+            let year =  components.year
+            let month = components.month
+            let day = components.day
+            
+            if (selectedDateYear == year && selectedDateMonth == month && selectedDateDay == day){
+                selectedDateEvents.append(event)
+            }
+        }
+        print("todays events count")
+        print(selectedDateEvents.count)
+        return selectedDateEvents
     }
     
     func getAllEvents() -> [EventModel] {
@@ -56,12 +85,20 @@ class EventRepository{
         var events: [EventModel] = []
         managedEvents.forEach {
             let managedEvent = $0
-            let startTime = Date()//managedEvent.value(forKey: "startTime") as! String
-            let endTime = Date()//managedEvent.value(forKey: "endTime") as! String
+            let startTime = dateFromString(dateString: managedEvent.value(forKey: "startTime") as! String)
+            let endTime = dateFromString(dateString: managedEvent.value(forKey: "endTime") as! String)
             let event = EventModel(title: managedEvent.value(forKey: "title") as! String, notes: managedEvent.value(forKey: "notes") as! String, startTime: startTime, endTime: endTime)
-            print(event)
             events.append(event)
         }
         return events
+    }
+    
+    private func dateFromString(dateString: String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        if let date = dateFormatter.date(from: dateString){
+            return date
+        }
+        return Date()
     }
 }

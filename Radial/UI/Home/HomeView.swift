@@ -9,7 +9,16 @@
 import Foundation
 import UIKit
 
+protocol HomeViewDelegate{
+    func newDateSelected(date: Date)
+}
+
 class HomeView: UIView{
+    var delegate: HomeViewDelegate?
+    
+    var selectedDate: Date?
+    
+    var dateTextField: UITextField!
     var clockView: ClockView!
     
     init() {
@@ -24,15 +33,57 @@ class HomeView: UIView{
     }
     
     func initViews(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HomeView.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
+        
+        dateTextField = UITextField()
+        dateTextField.delegate = self
         clockView = ClockView()
         
-        [clockView].forEach{
+        [dateTextField, clockView].forEach{
             addSubview($0)
         }
     }
     
     func initConstraints(){
+        dateTextField.anchor(top: safeAreaLayoutGuide.topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 0, height: 60))
+        dateTextField.backgroundColor = .white
+        dateTextField.textAlignment = .center
+        dateTextField.text = "TODAY"
+        
         clockView.anchorCenter(to: self)
-        clockView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, size: .init(width: 300, height: 300))
+        clockView.anchor(top: nil, leading: nil, bottom: nil, trailing: nil, size: .init(width: 400, height: 400))
+    }
+    
+    func configureView(events: [EventModel]){
+        clockView.redraw(events: events)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.endEditing(true)
+        
+        // todo: move this to another method when we have a submit button
+        if let date = self.selectedDate {
+            delegate?.newDateSelected(date: date)
+        }
+    }
+}
+
+
+extension HomeView: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        dateTextField.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(HomeView.datePicked), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePicked(sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd yyyy"
+        dateTextField.text = dateFormatter.string(from: sender.date)
+
+        self.selectedDate = sender.date
     }
 }

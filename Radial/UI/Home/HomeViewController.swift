@@ -16,6 +16,8 @@ class HomeViewController: UIViewController{
     let homeView: HomeView!
     let interactor: HomeInteractor!
     
+    var events: [EventModel] = []
+    
     init(navigator: HomeNavigation, view: HomeView, interactor: HomeInteractor) {
         self.navigator = navigator
         self.homeView = view
@@ -32,12 +34,20 @@ class HomeViewController: UIViewController{
         
         self.view.addSubview(homeView)
         self.homeView.fillSuperview()
+        homeView.delegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .plain, target: self, action: #selector(addTapped))
         
-        interactor.getAllEvents()
+        // get today's events
+        homeView.configureView(events: interactor.getEvents(for: Date()))
     }
     
     @objc func addTapped(){
         navigator.toAddEventViewController()
+    }
+}
+
+extension HomeViewController: HomeViewDelegate{
+    func newDateSelected(date: Date) {
+        homeView.configureView(events: interactor.getEvents(for: date))
     }
 }

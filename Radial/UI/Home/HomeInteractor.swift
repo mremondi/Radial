@@ -9,6 +9,11 @@
 import Foundation
 
 class HomeInteractor{
+    func getEvents(for date: Date) -> [EventModel]{
+        let repository = EventRepository()
+        return repository.getEvents(for: date)
+    }
+    
     func getAllEvents() -> [EventModel]{
         let repository = EventRepository()
         return repository.getAllEvents()
