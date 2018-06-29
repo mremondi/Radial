@@ -58,6 +58,14 @@ class HomeView: UIView{
     
     func configureView(events: [EventModel]){
         clockView.redraw(events: events)
+        
+        UIView.animate(withDuration: 0.5, delay:0, options: [.repeat, .autoreverse], animations: {
+            UIView.setAnimationRepeatCount(2)
+            self.clockView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+
+        }, completion: {completion in
+            self.clockView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
     }
     
     @objc func dismissKeyboard() {

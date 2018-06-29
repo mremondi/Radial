@@ -24,6 +24,7 @@ class EventRepository{
         eventCache.setValue(eventData[1], forKeyPath: "notes")
         eventCache.setValue(eventData[2], forKeyPath: "startTime")
         eventCache.setValue(eventData[3], forKeyPath: "endTime")
+        eventCache.setValue(eventData[4], forKey: "type")
         
         do {
             try managedContext.save()
@@ -34,8 +35,6 @@ class EventRepository{
     
     func getEvents(for date: Date) -> [EventModel] {
         let allEvents = getAllEvents()
-        print("all events count")
-        print(allEvents.count)
         var selectedDateEvents: [EventModel] = []
         
         let selectedDate = date
@@ -59,8 +58,6 @@ class EventRepository{
                 selectedDateEvents.append(event)
             }
         }
-        print("todays events count")
-        print(selectedDateEvents.count)
         return selectedDateEvents
     }
     
@@ -87,8 +84,20 @@ class EventRepository{
             let managedEvent = $0
             let startTime = dateFromString(dateString: managedEvent.value(forKey: "startTime") as! String)
             let endTime = dateFromString(dateString: managedEvent.value(forKey: "endTime") as! String)
-            let event = EventModel(title: managedEvent.value(forKey: "title") as! String, notes: managedEvent.value(forKey: "notes") as! String, startTime: startTime, endTime: endTime)
-            events.append(event)
+            
+            if let type = managedEvent.value(forKey: "type") as? String{
+                let event = EventModel(title: managedEvent.value(forKey: "title") as! String, notes: managedEvent.value(forKey: "notes") as! String, startTime: startTime, endTime: endTime, type: type)
+                
+                events.append(event)
+
+                
+            } else {
+                let event = EventModel(title: managedEvent.value(forKey: "title") as! String, notes: managedEvent.value(forKey: "notes") as! String, startTime: startTime, endTime: endTime, type: "")
+            
+                events.append(event)
+                
+            }
+            
         }
         return events
     }

@@ -13,4 +13,5 @@ struct EventModel{
     let notes: String
     let startTime: Date
     let endTime: Date
+    let type: String
 }
